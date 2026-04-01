@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://aksri648.github.io/vistaranexports5",
+  "homepage": "https://vistaranexports.com",
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
