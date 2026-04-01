@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
-import uaeflag from '../../../public/images/uaeflag.png';
-import indiaflag from '../../../public/images/indiaflag.png';
-import southafricaflag from '../../../public/images/southafricaflag.png';
-import globeicon from '../../../public/images/globeicon.png';
-import personicon from '../../../public/images/personicon.png';
-
-import customersupport_icon from '../../../public/images/customersupport_icon.png';
-import assurityicon from '../../../public/images/assurityicon.png';
-import clipboardicon from '../../../public/images/clipboardicon.png';
-import handshakeicon from '../../../public/images/handshakeicon.png';
+const uaeflag = '/images/uaeflag.png';
+const indiaflag = '/images/indiaflag.png';
+const southafricaflag = '/images/southafricaflag.png';
+const globeicon = '/images/globeicon.png';
+const personicon = '/images/personicon.png';
+const assurityicon = '/images/assurityicon.png';
+const clipboardicon = '/images/clipboardicon.png';
+const handshakeicon = '/images/handshakeicon.png';
 
 
 const Homepage = () => {

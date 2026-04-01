@@ -1,18 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.css";
-import uaeflag from "../../../public/images/uaeflag.png";
-import indiaflag from "../../../public/images/indiaflag.png";
-import southafricaflag from "../../../public/images/southafricaflag.png";
-import globeicon from "../../../public/images/globeicon.png";
-import personicon from "../../../public/images/personicon.png";
-
 import MapEmbed from "../MapEmbed/MapEmbed";
-import customersupport_icon from "../../../public/images/customersupport_icon.png";
-import assurityicon from "../../../public/images/assurityicon.png";
-import clipboardicon from "../../../public/images/clipboardicon.png";
-import handshakeicon from "../../../public/images/handshakeicon.png";
 import about from "../../assets/about.jpeg";
+
+const uaeflag = "/images/uaeflag.png";
+const indiaflag = "/images/indiaflag.png";
+const southafricaflag = "/images/southafricaflag.png";
+const globeicon = "/images/globeicon.png";
+const personicon = "/images/personicon.png";
+const assurityicon = "/images/assurityicon.png";
+const clipboardicon = "/images/clipboardicon.png";
+const handshakeicon = "/images/handshakeicon.png";
 
 const About = () => {
   const navigate = useNavigate();
