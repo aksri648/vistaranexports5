@@ -37,7 +37,7 @@ const IndustrialChemicals = () => {
 
   const [currentIndex, setCurrentIndex] = useState(1); // start at first real slide
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const carouselRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   const autoPlayRef = useRef(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -45,16 +45,20 @@ const IndustrialChemicals = () => {
   const totalExtendedSlides = extendedSlides.length;
 
   const nextSlide = () => {
-    if (!isTransitioning) return;
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => prev + 1);
   };
 
   const prevSlide = () => {
-    if (!isTransitioning) return;
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => prev - 1);
   };
 
   const goToSlide = (index) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex(index);
   };
 
@@ -64,12 +68,24 @@ const IndustrialChemicals = () => {
       // Moved to fake last slide -> jump to last real slide
       setIsTransitioning(false);
       setCurrentIndex(totalRealSlides);
-      setTimeout(() => setIsTransitioning(true), 20);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+          setIsAnimating(false);
+        });
+      });
     } else if (currentIndex === totalExtendedSlides - 1) {
       // Moved to fake first slide -> jump to first real slide
       setIsTransitioning(false);
       setCurrentIndex(1);
-      setTimeout(() => setIsTransitioning(true), 20);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+          setIsAnimating(false);
+        });
+      });
+    } else {
+      setIsAnimating(false);
     }
   };
 
@@ -85,15 +101,6 @@ const IndustrialChemicals = () => {
 
   const pauseAutoPlay = () => setIsAutoPlaying(false);
   const resumeAutoPlay = () => setIsAutoPlaying(true);
-
-  // Set up transition detection
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('transitionend', handleTransitionEnd);
-      return () => carousel.removeEventListener('transitionend', handleTransitionEnd);
-    }
-  }, [currentIndex]);
 
   // Get active dot index
   const getActiveDotIndex = () => {
@@ -117,8 +124,8 @@ const IndustrialChemicals = () => {
         >
           <div className="carousel-container">
             <div
-              ref={carouselRef}
               className="carousel-track"
+              onTransitionEnd={handleTransitionEnd}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
                 transition: isTransitioning ? 'transform 0.5s ease' : 'none'

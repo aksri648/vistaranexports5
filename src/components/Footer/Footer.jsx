@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaFacebook,
   FaTwitter,
@@ -15,6 +15,7 @@ import "./Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   return (
     <footer className="footer">
@@ -101,7 +102,7 @@ const Footer = () => {
           <div className="cta-buttons">
             <button
               className="cta-btn contact-btn"
-              onClick={() => (window.location.href = "/contact")}
+              onClick={() => navigate("/contact")}
             >
               Contact Form
             </button>

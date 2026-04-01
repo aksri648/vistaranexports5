@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Homepage from './pages/Homepage/Homepage';
@@ -23,7 +23,7 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/products" element={<div>Products Page Coming Soon</div>} />
+          <Route path="/products" element={<Navigate to="/products/rice" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products/rice" element={<Rice />} />

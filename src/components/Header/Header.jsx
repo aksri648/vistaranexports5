@@ -143,9 +143,6 @@ const Header = () => {
                     <span className="mobile-dropdown-item-description">{category.description}</span>
                   </Link>
                 ))}
-                <Link to="/products" className="mobile-dropdown-view-all" onClick={toggleMenu}>
-                  View All Products →
-                </Link>
               </div>
             </li>
             

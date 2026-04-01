@@ -4,14 +4,15 @@ import "./About.css";
 import MapEmbed from "../MapEmbed/MapEmbed";
 import about from "../../assets/about.jpeg";
 
-const uaeflag = "/images/uaeflag.png";
-const indiaflag = "/images/indiaflag.png";
-const southafricaflag = "/images/southafricaflag.png";
-const globeicon = "/images/globeicon.png";
-const personicon = "/images/personicon.png";
-const assurityicon = "/images/assurityicon.png";
-const clipboardicon = "/images/clipboardicon.png";
-const handshakeicon = "/images/handshakeicon.png";
+const imageBase = `${import.meta.env.BASE_URL}images/`;
+const uaeflag = `${imageBase}uaeflag.png`;
+const indiaflag = `${imageBase}indiaflag.png`;
+const southafricaflag = `${imageBase}southafricaflag.png`;
+const globeicon = `${imageBase}globeicon.png`;
+const personicon = `${imageBase}personicon.png`;
+const assurityicon = `${imageBase}assurityicon.png`;
+const clipboardicon = `${imageBase}clipboardicon.png`;
+const handshakeicon = `${imageBase}handshakeicon.png`;
 
 const About = () => {
   const navigate = useNavigate();
@@ -94,13 +95,13 @@ const About = () => {
       name: "Ambikesh Tripathi",
       position: "CEO - Founder",
       phone: "+971 56 911 9955",
-      image: "/images/men1.png",
+      image: `${imageBase}men1.png`,
     },
     {
       name: "Spandana M",
       position: "Operational Head",
       phone: "+70 264 566 579",
-      image: "/images/lady.png",
+      image: `${imageBase}lady.png`,
     },
   ];
 

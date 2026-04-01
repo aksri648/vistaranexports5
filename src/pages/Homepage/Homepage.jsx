@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
-const uaeflag = '/images/uaeflag.png';
-const indiaflag = '/images/indiaflag.png';
-const southafricaflag = '/images/southafricaflag.png';
-const globeicon = '/images/globeicon.png';
-const personicon = '/images/personicon.png';
-const assurityicon = '/images/assurityicon.png';
-const clipboardicon = '/images/clipboardicon.png';
-const handshakeicon = '/images/handshakeicon.png';
+const imageBase = `${import.meta.env.BASE_URL}images/`;
+const uaeflag = `${imageBase}uaeflag.png`;
+const indiaflag = `${imageBase}indiaflag.png`;
+const southafricaflag = `${imageBase}southafricaflag.png`;
+const globeicon = `${imageBase}globeicon.png`;
+const personicon = `${imageBase}personicon.png`;
+const assurityicon = `${imageBase}assurityicon.png`;
+const clipboardicon = `${imageBase}clipboardicon.png`;
+const handshakeicon = `${imageBase}handshakeicon.png`;
 
 
 const Homepage = () => {
@@ -29,7 +30,7 @@ const slides = [
     description: "Vistaran Exports is a trusted name in general trading and international trade, connecting buyers and suppliers across continents with premium agricultural products.",
     cta: "Contact Us",
     background: "linear-gradient(135deg, #0B014B 0%, #1a6b3a 100%)",
-    image: "/images/grocery.jpg",
+    image: `${imageBase}grocery.jpg`,
     page: '/contact'
   },
   {
@@ -38,7 +39,7 @@ const slides = [
     subtitle: "Quality Goods for Everyday Life",
     description: "Headquartered in the UAE, we offer reliable sourcing, timely delivery, and comprehensive logistics support for all consumer product needs.",
     cta: "Contact Us",
-    image: "/images/consumergoodbanner.png",
+    image: `${imageBase}consumergoodbanner.png`,
     page: '/contact'
   },
   {
@@ -48,7 +49,7 @@ const slides = [
     description: "We supply a wide variety of goods across sectors including household essentials and industrial supplies with competitive pricing.",
     cta: "Contact Us",
     background: "linear-gradient(135deg, #2c3e50 0%, #1a2634 100%)",
-    image: "/images/household1.jpg",
+    image: `${imageBase}household1.jpg`,
     page: '/contact'
   }
   
@@ -60,37 +61,37 @@ const slides = [
       id: 1,
       name: "Rice",
       description: "Premium Basmati & More",
-      image: "/images/ricecats.jpeg"
+      image: `${imageBase}ricecats.jpeg`
     },
     {
       id: 2,
       name: "Spice",
       description: "Authentic Indian Spices",
-      image: "/images/spicecat.jpeg"
+      image: `${imageBase}spicecat.jpeg`
     },
     {
       id: 3,
       name: "Pulses",
       description: "Protein-Rich Legumes",
-      image: "/images/pulsecat.jpeg"
+      image: `${imageBase}pulsecat.jpeg`
     },
     {
       id: 4,
       name: "Garments",
       description: "Textile & Apparel",
-      image: "/images/garmentcat.avif"
+      image: `${imageBase}garmentcat.avif`
     },
     {
       id: 5,
       name: "Spare Part",
       description: "Industrial Components",
-      image: "/images/machinecat.jpeg"
+      image: `${imageBase}machinecat.jpeg`
     },
     {
       id: 6,
       name: "Industrial Chemicals",
       description: "Bulk Chemicals",
-      image: "/images/chemicalcat.jpeg"
+      image: `${imageBase}chemicalcat.jpeg`
     }
     
     
@@ -283,7 +284,7 @@ const slides = [
         <div className="container">
           <div className="who-we-are-grid">
             <div className="who-we-are-image">
-              <img src="/images/export.jpeg" alt="Who We Are" className="who-we-are-img" />
+              <img src={`${imageBase}export.jpeg`} alt="Who We Are" className="who-we-are-img" />
             </div>
             <div className="who-we-are-content">
               <h2 className="who-we-are-title">Who We Are</h2>
@@ -458,7 +459,7 @@ const slides = [
       {/* Team Member 1 - Ambikesh Tripathi */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/men1.png" alt="Ambikesh Tripathi" className="team-card-img" />
+          <img src={`${imageBase}men1.png`} alt="Ambikesh Tripathi" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Ambikesh Tripathi</h3>
@@ -470,7 +471,7 @@ const slides = [
       {/* Team Member 2 - Spandana M */}
       <div className="team-card">
         <div className="team-card-image">
-          <img src="/images/lady.png" alt="Spandana M" className="team-card-img" />
+          <img src={`${imageBase}lady.png`} alt="Spandana M" className="team-card-img" />
         </div>
         <div className="team-card-content">
           <h3 className="team-card-name">Spandana M</h3>
