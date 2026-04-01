@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="app">
